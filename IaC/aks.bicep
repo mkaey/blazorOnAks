@@ -7,6 +7,7 @@ param sshRSAPublicKey string
 
 var postfix = 'mkaey'
 var aksName = 'aks-${postfix}'
+var acrName = 'acr-${postfix}'
 
 resource aksCluster 'Microsoft.ContainerService/managedClusters@2021-03-01' = {
   name: aksName
@@ -38,5 +39,17 @@ resource aksCluster 'Microsoft.ContainerService/managedClusters@2021-03-01' = {
         ]
       }
     }
+  }
+}
+
+resource containerRegistry 'Microsoft.ContainerRegistry/registries@2021-06-01-preview' = {
+  name: acrName
+  location: resourceGroup().location
+  sku: {
+    name: 'Basic'
+  }
+  properties: {
+    publicNetworkAccess: 'Enabled'
+    adminUserEnabled: true
   }
 }
