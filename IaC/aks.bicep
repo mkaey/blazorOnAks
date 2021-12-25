@@ -7,7 +7,7 @@ param sshRSAPublicKey string
 
 var postfix = 'mkaey'
 var aksName = 'aks-${postfix}'
-var acrName = 'acr-${postfix}'
+var acrName = 'acr${postfix}'
 
 resource aksCluster 'Microsoft.ContainerService/managedClusters@2021-03-01' = {
   name: aksName
