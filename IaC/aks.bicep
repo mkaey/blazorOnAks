@@ -4,10 +4,14 @@
 param adminUserName string = 'aksAdmin'
 @secure()
 param sshRSAPublicKey string
+param adminGroupObjectIDs array = [
+  'a4e03ccf-7938-49ca-bce0-d103e2abb37d'
+]
 
 var postfix = 'mkaey'
 var aksName = 'aks-${postfix}'
 var acrName = 'acr${postfix}'
+var nodeResourceGroup = 'rg-delegate-${aksName}'
 
 resource aksCluster 'Microsoft.ContainerService/managedClusters@2021-03-01' = {
   name: aksName
@@ -16,8 +20,18 @@ resource aksCluster 'Microsoft.ContainerService/managedClusters@2021-03-01' = {
     type: 'SystemAssigned'
   }
   properties: {
+    nodeResourceGroup: nodeResourceGroup
+    networkProfile: {
+      networkPolicy: 'calico'
+      networkPlugin: 'azure'
+    }
+    aadProfile: {
+      enableAzureRBAC: true
+      managed: true
+      adminGroupObjectIDs: adminGroupObjectIDs
+    }
     kubernetesVersion: '1.22.4'
-    dnsPrefix: 'mkaey'
+    dnsPrefix: postfix
     enableRBAC: true
     addonProfiles: {}
     agentPoolProfiles: [
@@ -27,6 +41,8 @@ resource aksCluster 'Microsoft.ContainerService/managedClusters@2021-03-01' = {
         vmSize: 'Standard_B2MS'
         osType: 'Linux'
         mode: 'System'
+        osSKU: 'Ubuntu'
+        type: 'VirtualMachineScaleSets'
       }
     ]
     linuxProfile: {
