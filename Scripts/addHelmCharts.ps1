@@ -1,5 +1,4 @@
-# cluster managed identity
-$managedIdentity = az aks show -g $resourceGroupName -n $clusterName --query identityProfile.kubeletidentity.clientId -o tsv
+
 
 # Assign roles to MI
 az role assignment create --role "Managed Identity Operator" --assignee $managedIdentity --scope "/subscriptions/$subscriptionId/resourcegroups/$nodeResourceGroupName"
