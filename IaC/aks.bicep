@@ -11,6 +11,7 @@ param adminGroupObjectIDs array = [
 var postfix = 'mkaey'
 var aksName = 'aks-${postfix}'
 var acrName = 'acr${postfix}'
+var vaultName = 'kv-${postfix}'
 var nodeResourceGroup = 'rg-delegate-${aksName}'
 
 resource aksCluster 'Microsoft.ContainerService/managedClusters@2021-03-01' = {
@@ -67,5 +68,20 @@ resource containerRegistry 'Microsoft.ContainerRegistry/registries@2021-06-01-pr
   properties: {
     publicNetworkAccess: 'Enabled'
     adminUserEnabled: true
+  }
+}
+
+resource keyVault 'Microsoft.KeyVault/vaults@2019-09-01' = {
+  name: vaultName
+  location: resourceGroup().location
+  properties: {
+    enabledForDeployment: true
+    enabledForTemplateDeployment: true
+    tenantId: subscription().tenantId
+    enableRbacAuthorization: true
+    sku: {
+      name: 'standard'
+      family: 'A'
+    }
   }
 }
