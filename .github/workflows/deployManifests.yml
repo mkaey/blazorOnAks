@@ -15,4 +15,4 @@ jobs:
     - uses: azure/k8s-deploy@v1
       with:
         manifests: |
-          Manifests/*
+          Manifests/keyvault-SecretProvider.yaml
