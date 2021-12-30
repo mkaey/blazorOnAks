@@ -45,6 +45,9 @@ resource aksCluster 'Microsoft.ContainerService/managedClusters@2021-03-01' = {
         mode: 'System'
         osSKU: 'Ubuntu'
         type: 'VirtualMachineScaleSets'
+        enableAutoScaling: true
+        maxCount: 3
+        minCount: 1
       }
     ]
     linuxProfile: {
