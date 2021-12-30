@@ -16,3 +16,4 @@ jobs:
       with:
         manifests: |
           Manifests/keyvault-SecretProvider.yaml
+          Manifests/dynamicstorage.yaml
