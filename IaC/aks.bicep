@@ -12,6 +12,7 @@ var postfix = 'mkaey'
 var aksName = 'aks-${postfix}'
 var acrName = 'acr${postfix}'
 var vaultName = 'kv-${postfix}'
+var storageName = 'st${postfix}'
 var nodeResourceGroup = 'rg-delegate-${aksName}'
 
 resource aksCluster 'Microsoft.ContainerService/managedClusters@2021-03-01' = {
@@ -39,7 +40,7 @@ resource aksCluster 'Microsoft.ContainerService/managedClusters@2021-03-01' = {
       {
         name: 'agentpool'
         count: 1
-        vmSize: 'Standard_B2MS'
+        vmSize: 'Standard_B2S'
         osType: 'Linux'
         mode: 'System'
         osSKU: 'Ubuntu'
@@ -83,5 +84,14 @@ resource keyVault 'Microsoft.KeyVault/vaults@2019-09-01' = {
       name: 'standard'
       family: 'A'
     }
+  }
+}
+
+resource storageaccount 'Microsoft.Storage/storageAccounts@2021-02-01' = {
+  name: storageName
+  location: resourceGroup().location
+  kind: 'StorageV2'
+  sku: {
+    name: 'Standard_LRS'
   }
 }
