@@ -17,3 +17,5 @@ jobs:
         manifests: |
           Manifests/keyvault-SecretProvider.yaml
           Manifests/dynamicstorage.yaml
+          Manifests/sql-pvc.yaml
+          Manifests/sql-deployment.yaml
