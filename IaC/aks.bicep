@@ -91,6 +91,7 @@ resource keyVault 'Microsoft.KeyVault/vaults@2019-09-01' = {
 }
 
 module storage 'storage.bicep' = {
+  scope: resourceGroup(nodeResourceGroup)
   name: 'aksstorage'
   params: {
     storageName: storageName
