@@ -15,13 +15,9 @@ spec:
       terminationGracePeriodSeconds: 30
       hostname: mssqlinst
       securityContext:
-        fsGroup: 10001
+        runAsUser: 0
       containers:
       - name: mssql
-        resources:
-          limits:
-            memory: "256Mi"
-            cpu: "1"
         image: mcr.microsoft.com/mssql/server:2019-latest
         ports:
         - containerPort: 1433
