@@ -4,7 +4,7 @@ param sqlUser string
 param sqlPassword string
 
 var serverName = 'sql-${postfix}'
-var dbName = 'sqldb--${postfix}'
+var dbName = 'sqldb-${postfix}'
 
 resource sqlServer 'Microsoft.Sql/servers@2014-04-01' = {
   name: serverName
