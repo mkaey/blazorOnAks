@@ -1,0 +1,11 @@
+C:\Users\mkaet\source\repos\blazorOnAks\Source\WorkoutDB\WorkoutDB\obj\Debug\WorkoutDB.sqlproj.AssemblyReference.cache
+C:\Users\mkaet\source\repos\blazorOnAks\Source\WorkoutDB\WorkoutDB\obj\Debug\WorkoutDB.dll
+C:\Users\mkaet\source\repos\blazorOnAks\Source\WorkoutDB\WorkoutDB\obj\Debug\WorkoutDB.pdb
+C:\Users\mkaet\source\repos\blazorOnAks\Source\WorkoutDB\WorkoutDB\WorkoutDB.dacpac
+C:\Users\mkaet\source\repos\blazorOnAks\Source\WorkoutDB\WorkoutDB\obj\Debug\Model.xml
+C:\Users\mkaet\source\repos\blazorOnAks\Source\WorkoutDB\WorkoutDB\obj\Debug\refactor.xml
+C:\Users\mkaet\source\repos\blazorOnAks\Source\WorkoutDB\WorkoutDB\obj\Debug\postdeploy.sql
+C:\Users\mkaet\source\repos\blazorOnAks\Source\WorkoutDB\WorkoutDB\obj\Debug\predeploy.sql
+C:\Users\mkaet\source\repos\blazorOnAks\Source\WorkoutDB\WorkoutDB\refactor.xml
+C:\Users\mkaet\source\repos\blazorOnAks\Source\WorkoutDB\WorkoutDB\WorkoutDB.dll
+C:\Users\mkaet\source\repos\blazorOnAks\Source\WorkoutDB\WorkoutDB\WorkoutDB.pdb
