@@ -102,5 +102,7 @@ module sql 'sql.bicep' = {
   name: 'sql'
   params: {
     postfix: postfix
+    sqlUser: 'aksSqlAdmin'
+    sqlPassword: keyVault.getSecret('sqlPassword')
   }
 }
