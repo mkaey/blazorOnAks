@@ -23,7 +23,7 @@ jobs:
       with:
         server-name: sql-mkaey.database.windows.net
         connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
-        dacpac-package: './Source/WorkoutDB/Database.dacpac'
+        dacpac-package: './Source/WorkoutDB/WorkoutDB/WorkoutDB.dacpac'
 
         
     # - uses: azure/aks-set-context@v1
