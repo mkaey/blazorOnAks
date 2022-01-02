@@ -12,14 +12,14 @@ jobs:
         cluster-name: ${{ secrets.CLUSTER_NAME }}
         resource-group: ${{ secrets.AZURE_RG }}
 
-    # - name: deploy arm
-    #   uses: azure/arm-deploy@v1
-    #   with:
-    #     subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-    #     resourceGroupName: ${{ secrets.AZURE_RG }}
-    #     template: ./IaC/aks.bicep
-    #     parameters: sshRSAPublicKey="${{ secrets.AKS_PUBKEY }}"
-    #     failOnStdErr: false
+    - name: deploy arm
+      uses: azure/arm-deploy@v1
+      with:
+        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+        resourceGroupName: ${{ secrets.AZURE_RG }}
+        template: ./IaC/aks.bicep
+        parameters: sshRSAPublicKey="${{ secrets.AKS_PUBKEY }}"
+        failOnStdErr: false
         
     # - uses: azure/k8s-deploy@v1
     #   with:
