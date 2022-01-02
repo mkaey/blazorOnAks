@@ -1,7 +1,7 @@
 param postfix string
-param sqlUser string
-@secure()
-param sqlPassword string
+//param sqlUser string
+// @secure()
+// param sqlPassword string
 
 var serverName = 'sql-${postfix}'
 var dbName = 'sqldb--${postfix}'

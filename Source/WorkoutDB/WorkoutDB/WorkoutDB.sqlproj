@@ -57,4 +57,13 @@
   <ItemGroup>
     <Folder Include="Properties" />
   </ItemGroup>
+  <ItemGroup>
+    <Build Include="Exercise.sql" />
+    <Build Include="User.sql" />
+    <Build Include="Routine.sql" />
+    <Build Include="routine_exercises.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="WorkoutDB.refactorlog" />
+  </ItemGroup>
 </Project>

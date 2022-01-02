@@ -100,5 +100,7 @@ module storage 'storage.bicep' = {
 
 module sql 'sql.bicep' = {
   name: 'sql'
-  params: {}
+  params: {
+    postfix: postfix
+  }
 }
