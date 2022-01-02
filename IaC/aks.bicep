@@ -97,3 +97,8 @@ module storage 'storage.bicep' = {
     storageName: storageName
   }
 }
+
+module sql 'sql.bicep' = {
+  name: 'sql'
+  params: {}
+}
