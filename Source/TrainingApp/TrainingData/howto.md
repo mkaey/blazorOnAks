@@ -1,0 +1,2 @@
+﻿### Scaffold DB Classes
+	Scaffold-DbContext "Server=tcp:sql-mkaey.database.windows.net,1433;Database=sqldb-mkaey;Persist Security Info=False;User ID=aksSqlAdmin;Password=kubSQpw123!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
